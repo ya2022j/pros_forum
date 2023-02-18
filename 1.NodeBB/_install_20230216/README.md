@@ -32,7 +32,9 @@ mongo
 # 进入admin数据库
 use admin
 
-db.createUser({user:'root',pwd:'123456',roles:[{role:'root',db:'nodebb'}]})
+# db.createUser({user:'root',pwd:'123456',roles:[{role:'root',db:'nodebb'}]})
+
+use nodebb
 
 ```
 
@@ -54,6 +56,7 @@ systemctl start firewalld
 
 2、开放指定端口
 firewall-cmd --zone=public --add-port=1935/tcp --permanent
+firewall-cmd --zone=public --add-port=4567/tcp --permanent
 命令含义：
 –zone #作用域
 –add-port=1935/tcp#添加端口，格式为：端口/通讯协议
