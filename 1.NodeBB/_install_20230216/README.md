@@ -29,12 +29,12 @@ docker-compose up -d
 # 进入mongo shell
 mongo
 
-# 进入admin数据库
-use admin
+直接使用官方的配置 ，可以不再初始化的时候就折腾
+mongo
+* use nodebb
+ *  db.createUser( { user: "nodebb", pwd: "123456", roles: [ "readWrite" ] } )
+* db.grantRolesToUser("nodebb",[{ role: "clusterMonitor", db: "admin" }]);
 
-# db.createUser({user:'root',pwd:'123456',roles:[{role:'root',db:'nodebb'}]})
-
-use nodebb
 
 ```
 
